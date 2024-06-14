@@ -3,7 +3,7 @@
 </p>
 <p align="center">
 		<a href=""><img alt="" src="https://img.shields.io/badge/MQL_5-8A2BE2" height="20"/></a>
-<a href="https://Fdiscord.gg/jEtwguzZ4R"><img alt="" src="https://img.shields.io/badge/Discord-Channel-blue" height="20"/></a>
+<a href="https://discord.gg/jEtwguzZ4R"><img alt="" src="https://img.shields.io/badge/Discord-Channel-blue" height="20"/></a>
 <a href="https://www.youtube.com/@YourTradeMaster"><img alt="" src="https://img.shields.io/badge/Youtube-Channel-db2e73" height="20"/></a>
 <a href=""><img alt="" src="https://img.shields.io/github/commit-activity/t/drkhodakarami/MT-Core-Lib" height="20"/></a>
 <a href=""><img alt="" src="https://img.shields.io/github/last-commit/drkhodakarami/MT-Core-Lib" height="20"/></a>
