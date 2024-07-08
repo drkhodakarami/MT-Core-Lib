@@ -1,0 +1,4 @@
+## Examples
+You can find many examples under `Experts` and `Indicators` folders. All of them will sit under `TMCoreTest` subfolders and they will be separated by video sessions from youtube.
+
+If you want to load them inside metatrader, you should open the data folder and navigate to MQL5 directory, here, you will see experts and indicators sub folders. Copy the example you want to load inside the coresponding sub folder. Go back to metatrader, inside the `Navigator` window, hit the refresh button from right click menue. The example should load up. Now you can simply drag and drop the example script on the chart and see the functionality and it's result. If you don't know how to follow the example and see the result, refer to the corresponding video session on you tube here : {{ link }}

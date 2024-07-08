@@ -1,0 +1,54 @@
+{	
+  "logo": {
+    "src": "https://raw.githubusercontent.com/drkhodakarami/MT-Core-Lib/master/readme/banner.png"
+  },
+  "line": "rainbow",
+  "bullets": {
+		"Simple": "Adding and using this library to your scripts are really easy",
+		"Powerful": "This library gives you powerful options for developing your indicators / expert advisors",
+		"GUI": "The graphical user interface library will give you very powerful and flexible user interface for your script",
+		"BOT": "The built in functionality for developing a trading robot is so powerful that you can't live without it after the first time you tried coding with it"
+	},
+  "badges": [
+	{
+		"alt": "",
+		"url": "",
+		"img": "https://img.shields.io/badge/MQL_5-8A2BE2"
+	},
+	{
+		"alt": "",
+		"url": "https://discord.gg/jEtwguzZ4R",
+		"img": "https://img.shields.io/badge/Discord-Channel-blue"
+	},
+	{
+		"alt": "",
+		"url": "https://www.youtube.com/@YourTradeMaster",
+		"img": "https://img.shields.io/badge/Youtube-Channel-db2e73"
+	},
+	{
+		"alt": "",
+		"url": "",
+		"img": "https://img.shields.io/github/commit-activity/t/drkhodakarami/MT-Core-Lib"
+	},
+	{
+		"alt": "",
+		"url": "",
+		"img": "https://img.shields.io/github/last-commit/drkhodakarami/MT-Core-Lib"
+	},
+	{
+		"alt": "",
+		"url": "",
+		"img": "https://img.shields.io/github/downloads/drkhodakarami/MT-Core-Lib/total"
+	},
+	{
+		"alt": "",
+		"url": "",
+		"img": "https://img.shields.io/github/license/drkhodakarami/MT-Core-Lib"
+	},
+	{
+		"alt": "",
+		"url": "",
+		"img": "https://img.shields.io/badge/Maintained-YES-31ad31"
+	}
+  ]
+}
