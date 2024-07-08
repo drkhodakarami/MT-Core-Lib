@@ -8,7 +8,7 @@
 //+------------------------------------------------------------------+
 //| Include files                                                    |
 //+------------------------------------------------------------------+
-#include "Defines.mqh"
+#include "..\Defines.mqh"
 #include "Translator.mqh"
 
 string program_name = "MTCoreLib";
@@ -37,7 +37,7 @@ string TimeMSCtoString(const long time_msc)
     return TimeToString(time_msc / 1000, TIME_DATE | TIME_MINUTES | TIME_SECONDS) + "." + IntegerToString(time_msc % 1000, 3, '0');
 }
 //+------------------------------------------------------------------+
-//| Return the number of decimal places in a symbol lot              |
+//| Returns the number of decimal places in a symbol lot             |
 //+------------------------------------------------------------------+
 uint DigitsLots(const string symbol_name)
 {
