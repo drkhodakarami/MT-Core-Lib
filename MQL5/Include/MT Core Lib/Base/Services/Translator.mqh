@@ -4,7 +4,7 @@
 //|                         https://www.youtube.com/@YourTradeMaster |
 //+------------------------------------------------------------------+
 #property copyright "Alireza Khodakarami"
-#property link      "https://www.youtube.com/@YourTradeMaster"
+#property link "https://www.youtube.com/@YourTradeMaster"
 //+------------------------------------------------------------------+
 //| includes                                                         |
 //+------------------------------------------------------------------+
@@ -15,21 +15,21 @@
 //+------------------------------------------------------------------+
 class CTranslator
 {
-private:
-    string           filename;
-public:
-                     CTranslator();
-                    ~CTranslator();
-    bool             init(string progName, ENUM_LANGUAGES lang);
-    string           tr(string str);
-    void             print(string str);
-    void             alert(string str);
-    void             comment(string str);
-    int              messageBox(string text, string caption = NULL, int flags = 0);
+  private:
+    string filename;
 
-private:
-    string           getTranslate(string str);
-    void             stringTrimBoth(string &str);
+  public:
+    CTranslator();
+    bool   init(string progName, ENUM_LANGUAGES lang);
+    string tr(string str);
+    void   print(string str);
+    void   alert(string str);
+    void   comment(string str);
+    int    messageBox(string text, string caption = NULL, int flags = 0);
+
+  private:
+    string getTranslate(string str);
+    void   stringTrimBoth(string &str);
 };
 
 //+------------------------------------------------------------------+
@@ -38,20 +38,7 @@ private:
 //| OUTPUT: no.                                                      |
 //| REMARK: no.                                                      |
 //+------------------------------------------------------------------+
-CTranslator::CTranslator()
-{
-}
-
-//+------------------------------------------------------------------+
-//| Destructor CTranslator.                                          |
-//| INPUT:  no.                                                      |
-//| OUTPUT: no.                                                      |
-//| REMARK: no.                                                      |
-//+------------------------------------------------------------------+
-CTranslator::~CTranslator()
-{
-}
-
+CTranslator::CTranslator() {}
 //+------------------------------------------------------------------+
 //| Initialization of object.                                        |
 //| INPUT:  progName - name of the MQL5 program,                     |
@@ -66,47 +53,31 @@ bool CTranslator::init(string progName, ENUM_LANGUAGES lang)
 
     filename = "Languages\\" + progName + "." + language + ".ini";
 
-    if ( !FileIsExist(filename) )
-    {
-        Print("WARNING(", __FUNCTION__, "): the file named \"", filename, "\" doesn't exist! Program will use aliases.");
-    }
-//---
-    return(true);
+    if(!FileIsExist(filename)) Print("WARNING(", __FUNCTION__, "): the file named \"", filename, "\" doesn't exist! Program will use aliases.");
+    //---
+    return (true);
 }
-
 //+------------------------------------------------------------------+
 //| Translate string.                                                |
 //| INPUT:  string to translate.                                     |
 //| OUTPUT: translated string.                                       |
 //| REMARK: no.                                                      |
 //+------------------------------------------------------------------+
-string CTranslator::tr(string str)
-{
-    return(getTranslate(str));
-}
-
+string CTranslator::tr(string str) { return (getTranslate(str)); }
 //+------------------------------------------------------------------+
 //| Print translated string.                                         |
 //| INPUT:  string to translate.                                     |
 //| OUTPUT: no.                                                      |
 //| REMARK: no.                                                      |
 //+------------------------------------------------------------------+
-void CTranslator::print(string str)
-{
-    Print(getTranslate(str));
-}
-
+void   CTranslator::print(string str) { Print(getTranslate(str)); }
 //+------------------------------------------------------------------+
 //| Display translated string in a separate (alert) window.          |
 //| INPUT:  string to translate.                                     |
 //| OUTPUT: no.                                                      |
 //| REMARK: no.                                                      |
 //+------------------------------------------------------------------+
-void CTranslator::alert(string str)
-{
-    Alert(getTranslate(str));
-}
-
+void   CTranslator::alert(string str) { Alert(getTranslate(str)); }
 //+------------------------------------------------------------------+
 //| Display translated string as a comment in the top left corner    |
 //| of a chart.                                                      |
@@ -114,11 +85,7 @@ void CTranslator::alert(string str)
 //| OUTPUT: no.                                                      |
 //| REMARK: no.                                                      |
 //+------------------------------------------------------------------+
-void CTranslator::comment(string str)
-{
-    Comment(getTranslate(str));
-}
-
+void   CTranslator::comment(string str) { Comment(getTranslate(str)); }
 //+------------------------------------------------------------------+
 //| Display translated string in a message box window.               |
 //| INPUT:  str - string to translate.                               |
@@ -128,11 +95,7 @@ void CTranslator::comment(string str)
 //| OUTPUT: one of values of MessageBox return codes.                |
 //| REMARK: no.                                                      |
 //+------------------------------------------------------------------+
-int CTranslator::messageBox(string str, string caption = NULL, int flags = 0)
-{
-    return(MessageBox(getTranslate(str), getTranslate(caption), flags));
-}
-
+int    CTranslator::messageBox(string str, string caption = NULL, int flags = 0) { return (MessageBox(getTranslate(str), getTranslate(caption), flags)); }
 //+------------------------------------------------------------------+
 //| Get trasnlation.                                                 |
 //| INPUT:  str - string to translate.                               |
@@ -141,41 +104,40 @@ int CTranslator::messageBox(string str, string caption = NULL, int flags = 0)
 //+------------------------------------------------------------------+
 string CTranslator::getTranslate(string str)
 {
-//---
+    //---
     int fileHandle = FileOpen(filename, FILE_READ | FILE_TXT | FILE_ANSI, 0, CP_UTF8);
 
-    if ( fileHandle == INVALID_HANDLE )
+    if(fileHandle == INVALID_HANDLE)
     {
         Print("Can't open file named \"", filename, "\"");
-        return(str);
+        return (str);
     }
-//---
+    //---
     string temp, alias, traslation;
-    int delimiterPos;
+    int    delimiterPos;
 
     stringTrimBoth(str);
 
-    for ( ; !FileIsEnding(fileHandle); )
+    for(; !FileIsEnding(fileHandle);)
     {
-        temp = FileReadString(fileHandle);
+        temp         = FileReadString(fileHandle);
         delimiterPos = StringFind(temp, "=");
-        alias = StringSubstr(temp, 0, delimiterPos);
+        alias        = StringSubstr(temp, 0, delimiterPos);
         stringTrimBoth(alias);
 
-        if ( StringCompare(str, alias, false) == 0 )
+        if(StringCompare(str, alias, false) == 0)
         {
             traslation = StringSubstr(temp, delimiterPos + 1);
             stringTrimBoth(traslation);
             FileClose(fileHandle);
 
-            return(traslation);
+            return (traslation);
         }
     }
     FileClose(fileHandle);
-//---
-    return(str);
+    //---
+    return (str);
 }
-
 //+------------------------------------------------------------------+
 //| Cut line feed characters, spaces and tabs in the both side.      |
 //| INPUT:  string to be cut.                                        |
