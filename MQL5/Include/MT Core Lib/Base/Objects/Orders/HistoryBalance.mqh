@@ -16,9 +16,9 @@
 class CHistoryBalance : public COrder
 {
   public:
-//--- Constructor
+    //--- Constructor
     CHistoryBalance(const ulong ticket) : COrder(ORDER_STATUS_BALANCE, ticket) {}
-//--- Supported deal properties (1) real, (2) integer
+    //--- Supported deal properties (1) real, (2) integer
     virtual bool SupportProperty(ENUM_ORDER_PROP_INTEGER property);
     virtual bool SupportProperty(ENUM_ORDER_PROP_DOUBLE property);
     virtual bool SupportProperty(ENUM_ORDER_PROP_STRING property);
@@ -29,8 +29,7 @@ class CHistoryBalance : public COrder
 //+------------------------------------------------------------------+
 bool CHistoryBalance::SupportProperty(ENUM_ORDER_PROP_INTEGER property)
 {
-    if(property == ORDER_PROP_TICKET || property == ORDER_PROP_TIME_OPEN || property == ORDER_PROP_STATUS || property == ORDER_PROP_TYPE || property == ORDER_PROP_REASON)
-        return true;
+    if(property == ORDER_PROP_TICKET || property == ORDER_PROP_TIME_OPEN || property == ORDER_PROP_STATUS || property == ORDER_PROP_TYPE || property == ORDER_PROP_REASON) return true;
     return false;
 }
 //+------------------------------------------------------------------+
