@@ -130,7 +130,7 @@ string CTranslator::getTranslate(string str)
             traslation = StringSubstr(temp, delimiterPos + 1);
             stringTrimBoth(traslation);
             FileClose(fileHandle);
-
+            traslation = StringSubstr(traslation, 1, StringLen(traslation) - 2);
             return (traslation);
         }
     }

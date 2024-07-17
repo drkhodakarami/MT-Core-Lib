@@ -29,21 +29,30 @@ class CHistoryBalance : public COrder
 //+------------------------------------------------------------------+
 bool CHistoryBalance::SupportProperty(ENUM_ORDER_PROP_INTEGER property)
 {
-    if(property == ORDER_PROP_TICKET || property == ORDER_PROP_TIME_OPEN || property == ORDER_PROP_STATUS || property == ORDER_PROP_TYPE || property == ORDER_PROP_REASON) return true;
+    if(property == ORDER_PROP_TICKET ||
+       property == ORDER_PROP_TIME_OPEN ||
+       property == ORDER_PROP_STATUS ||
+       property == ORDER_PROP_TYPE ||
+       property == ORDER_PROP_REASON)
+        return true;
     return false;
 }
 //+------------------------------------------------------------------+
 //| Return 'true' if an order supports a passed                      |
 //| real property, otherwise return 'false'                          |
 //+------------------------------------------------------------------+
-bool CHistoryBalance::SupportProperty(ENUM_ORDER_PROP_DOUBLE property) { return (property == ORDER_PROP_PROFIT ? true : false); }
+bool CHistoryBalance::SupportProperty(ENUM_ORDER_PROP_DOUBLE property) 
+{ 
+    return (property == ORDER_PROP_PROFIT ? true : false); 
+}
 //+------------------------------------------------------------------+
 //| Return 'true' if an order supports a passed                      |
 //| string property, otherwise return 'false'                        |
 //+------------------------------------------------------------------+
 bool CHistoryBalance::SupportProperty(ENUM_ORDER_PROP_STRING property)
 {
-    if(property == ORDER_PROP_SYMBOL || property == ORDER_PROP_EXT_ID) return false;
+    if(property == ORDER_PROP_SYMBOL || property == ORDER_PROP_EXT_ID)
+        return false;
     return true;
 }
 //+------------------------------------------------------------------+
